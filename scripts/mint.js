@@ -1,9 +1,8 @@
 /*
   You can use this script to quickly manually mintNFTs. To do so:
   Run `truffle exec ./scripts/mint.js`
-  If you want to mint more than one NFT, just pass in the number
  */
-var NFTCollection = artifacts.require("./NFTCollection.sol");
+var ERC4907Demo = artifacts.require("./ERC4907Demo.sol");
 
 function getErrorMessage(error) {
   if (error instanceof Error) return error.message
@@ -12,11 +11,8 @@ function getErrorMessage(error) {
 
 const main = async (cb) => {
   try {
-    const args = process.argv.slice(4);
-    const numNfts = args.length != 0 ? parseInt(args[0]) : 1;
-    const nftCollection = await NFTCollection.deployed();
-    const PRICE = await nftCollection.PRICE();
-    const txn = await nftCollection.mintNFTs(numNfts, {value: numNfts * parseInt(PRICE.toString())});
+    const demo = await ERC4907Demo.deployed();
+    const txn = await demo.mint();
     console.log(txn);
   } catch(err) {
     console.log('Doh! ', getErrorMessage(err));

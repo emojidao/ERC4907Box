@@ -3,7 +3,7 @@ import Web3 from 'web3';
 import "./App.css";
 import { useEffect, useState } from 'react';
 import './App.css';
-import contract from './contracts/NFTCollection.json';
+import contract from './contracts/ERC4907Demo.json';
 
 function App() {
 
@@ -66,7 +66,7 @@ function App() {
         console.log(nftContract);
         console.log("Initialize payment");
 
-        let nftTxn = await nftContract.methods.mintNFTs(1).send({ from: accounts[0], value: web3.utils.toWei("0.0001", "ether") }).on('receipt', function () {
+        let nftTxn = await nftContract.methods.mint().send({ from: accounts[0] }).on('receipt', function () {
           console.log('receipt')
         });
 

@@ -1,6 +1,6 @@
-# Truffle NFT Box
+# Truffle Box For ERC4907
 
-- [Truffle NFT Box](#truffle-nft-box)
+- [Truffle Box For ERC4907](#Truffle-Box-For-ERC4907)
   - [Requirements](#requirements)
   - [Setup](#setup)
   - [Installation](#installation)
@@ -8,7 +8,7 @@
 
 ## Requirements
 
-The NFT Box has the following requirements:
+The Truffle Box For ERC4907 has the following requirements:
 
 - [Node.js](https://nodejs.org/) 10.x or later
 - [NPM](https://docs.npmjs.com/cli/) version 5.2 or later
@@ -26,13 +26,13 @@ First ensure you are in a new and empty directory.
 
 1. Run the `unbox` command via `npx` and skip to step 3. This will install all necessary dependencies. A Create-React-App is generated in the `client` directory.
    ```js
-   npx truffle unbox nft-box
+   npx truffle unbox erc4907-box
    ```
 
 2. Alternatively, you can install Truffle globally and run the `unbox` command.
     ```javascript
     npm install -g truffle
-    truffle unbox nft-box
+    truffle unbox erc4907-box
     ```
     
 3. In the root directory install the required dependices. This will install a few things along with [Open Zeppelin Contracts](https://docs.openzeppelin.com/contracts/4.x/erc721) check them out [here](https://docs.openzeppelin.com/contracts/4.x/erc721) for more info.
@@ -40,10 +40,10 @@ First ensure you are in a new and empty directory.
       npm install @openzeppelin/contracts
       ```
       
-4. Add the contructor arguments to `deployer` function in `2_deploy_contracts.js`. The URI for your NFT images must be passed as the first argument. The `name` and `symbol` of the token will be passed as the second and third respectively.
+4. Add the contructor arguments to `deployer` function in `1_deploy_contracts.js`.
     ```javascript
     module.exports = function(deployer) {
-    deployer.deploy(NFTCollection,"YOUR URI","TOKEN NAME","TOKEN SYMBOL");
+    deployer.deploy(ERC4907Demo,"ERC4907","4907");
    };
     ``````
 4. In the root directory install the required dependices. This will install a few things along with [Open Zeppelin Contracts](https://docs.openzeppelin.com/contracts/4.x/erc721) check them out [here](https://docs.openzeppelin.com/contracts/4.x/erc721) for more info.
@@ -68,9 +68,9 @@ First ensure you are in a new and empty directory.
     npm install
     npm run start
     ```
-8. After migrating your contracts head to the `client` directory and run `npm run start` to view the application in your `http://localhost:3000/`. Connect your wallet      and mint your first NFT!
+8. After migrating your contracts head to the `client` directory and run `npm run start` to view the application in your `http://localhost:3000/`. Launch Ganache. Connect your wallet and mint your first NFT!
 
-9. You can check the developer console to see the transaction has and if you deploy to `rinkeby` you will be able to see the NFT on their test-net site [here](https://testnets.opensea.io/).
+9. You can check the developer console to see the transaction has and if you deploy to `Goerli` you will be able to see the NFT on their test-net site [here](https://testnets.opensea.io/).
 
 10. To build the application for production, use the build script. A production build will be in the `client/build` folder.
     ```javascript

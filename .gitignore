@@ -27,4 +27,4 @@ yarn-debug.log*
 yarn-error.log*
 
 client/src/contracts
-!client/src/contracts/NFTCollection.json
+!client/src/contracts/ERC4907Demo.json

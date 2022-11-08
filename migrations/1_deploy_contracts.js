@@ -1,5 +1,5 @@
-var NFTCollection = artifacts.require("./NFTCollection.sol");
+var ERC4907Demo = artifacts.require("./ERC4907Demo.sol");
 
 module.exports = function(deployer) {
-  deployer.deploy(NFTCollection,"URI HERE","TOKEN NAME","SYMBOL");
+  deployer.deploy(ERC4907Demo,"ERC4907","4907");
 };

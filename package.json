@@ -1,7 +1,7 @@
 {
-  "name": "nft-box",
+  "name": "erc4907-box",
   "version": "1.0.0",
-  "description": "Boilerplate for creating an NFT collection",
+  "description": "A simple demo for ERC4907",
   "directories": {
     "test": "test"
   },
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/truffle-box/nft-box.git"
+    "url": "git+https://github.com/emojidao/Truffle-Box-For-ERC4907.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/truffle-box/nft-box/issues"
+    "url": "https://github.com/emojidao/Truffle-Box-For-ERC4907/issues"
   },
-  "homepage": "https://github.com/truffle-box/nft-box#readme",
+  "homepage": "https://github.com/emojidao/Truffle-Box-For-ERC4907#readme",
   "dependencies": {
     "@openzeppelin/contracts": "^4.5.0",
     "dotenv": "^16.0.0",
