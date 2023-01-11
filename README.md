@@ -10,8 +10,10 @@
 
 The Truffle Box For ERC4907 has the following requirements:
 
-- [Node.js](https://nodejs.org/) 10.x or later
+- [Node.js](https://nodejs.org/) 14.x or later
 - [NPM](https://docs.npmjs.com/cli/) version 5.2 or later
+- [Truffle](https://trufflesuite.com/docs/truffle/how-to/install/)
+- [Ganache](https://github.com/trufflesuite/ganache#getting-started)
 - Windows, Linux or MacOS
 
 Helpful, but optional:
@@ -22,57 +24,41 @@ Helpful, but optional:
 
 ## Installation
 
-First ensure you are in a new and empty directory.
-
-1. Run the `unbox` command via `npx` and skip to step 3. This will install all necessary dependencies. A Create-React-App is generated in the `client` directory.
-   ```js
-   npx truffle unbox erc4907-box
-   ```
-
-2. Alternatively, you can install Truffle globally and run the `unbox` command.
-    ```javascript
-    npm install -g truffle
-    truffle unbox erc4907-box
+1. First ensure you are in a new and empty directory.
+    ```shell
+    truffle unbox emojidao/Truffle-Box-For-ERC4907
     ```
-    
-3. In the root directory install the required dependices. This will install a few things along with [Open Zeppelin Contracts](https://docs.openzeppelin.com/contracts/4.x/erc721) check them out [here](https://docs.openzeppelin.com/contracts/4.x/erc721) for more info.
-   ```javascript
-      npm install @openzeppelin/contracts
-      ```
-      
-4. Add the contructor arguments to `deployer` function in `1_deploy_contracts.js`.
-    ```javascript
-    module.exports = function(deployer) {
-    deployer.deploy(ERC4907Demo,"ERC4907","4907");
-   };
-    ``````
-4. In the root directory install the required dependices. This will install a few things along with [Open Zeppelin Contracts](https://docs.openzeppelin.com/contracts/4.x/erc721) check them out [here](https://docs.openzeppelin.com/contracts/4.x/erc721) for more info.
-   ```javascript
-      npm install
-      ```
+    If you want to create a directory, you can also run:
+    ```shell
+    truffle unbox emojidao/Truffle-Box-For-ERC4907 <Directory Name>
+    ```
+    Running the `unbox` command should install the required dependencies.
 
-5. Run the development console.
-    ```javascript
+2. Now, run the development console. This will spin up and allow you to interact with `ganache`, a local test chain on `localhost:9545`.
+    ```shell
     truffle develop
     ```
 
-6. Compile and migrate the smart contracts. Note inside the development console we don't preface commands with `truffle`.
-    ```javascript
-    compile
+3. Compile and migrate the smart contracts. Running `migrate` will do both. Note inside the development console we don't have to preface commands with `truffle`.
+    ```shell
     migrate
+    ```
 
-7. In the `client` directory, we run the React app. Smart contract changes must be manually recompiled and migrated.
+4. In the `client` directory, we run the React app. Smart contract changes must be manually recompiled and migrated.
     ```javascript
     // in another terminal (i.e. not in the truffle develop prompt)
     cd client
     npm install
     npm run start
     ```
-8. After migrating your contracts head to the `client` directory and run `npm run start` to view the application in your `http://localhost:3000/`. Launch Ganache. Connect your wallet and mint your first NFT!
 
-9. You can check the developer console to see the transaction has and if you deploy to `Goerli` you will be able to see the NFT on their test-net site [here](https://testnets.opensea.io/).
+5. After migrating your contracts, head to the `client` directory and run `npm run start` to view the application in your `http://localhost:3000/`.
 
-10. To build the application for production, use the build script. A production build will be in the `client/build` folder.
+6. To mint your first NFT, you'll need to connect your wallet to a network. To do so, make sure your development console is still running. Then, connect to that network using your wallet. Afterwards, you'll need to use a funded account. You can import an account to your MetaMask wallet by using a private key outputted by the development console.
+
+7. If you minted your NFT on `localhost:9545` on the developer console, you should be able to see the mint on your MetaMask wallet. If you deploy to `Goerli`, you will be able to see the NFT on their test-net site [here](https://testnets.opensea.io/).
+
+8. To build the application for production, use the build script. A production build will be in the `client/build` folder.
     ```javascript
     // ensure you are inside the client directory when running this
     npm run build
@@ -84,7 +70,7 @@ To deploy your contracts to a public network (such as a testnet or mainnet) ther
 
 ### Using Truffle Dashboard (recommended)
 
-Truffle Dashboard ships with Truffle and can be started with `truffle dashboard`. This in turn loads the dashboard at http://localhost:24012 and beyond that you'll just need to run your migration (`truffle migrate`). A more detailed guide to using Truffle Dashboard is available [here](https://trufflesuite.com/blog/introducing-truffle-dashboard/).
+Truffle Dashboard ships with Truffle and can be started with `truffle dashboard`. This in turn loads the dashboard at http://localhost:24012 and beyond that you'll just need to run your migration (`truffle migrate --network dashboard`). A more detailed guide to using Truffle Dashboard is available [here](https://trufflesuite.com/blog/introducing-truffle-dashboard/).
 
 ### Using the env File
 
