@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/emojidao/Truffle-Box-For-ERC4907.git"
+    "url": "git+https://github.com/emojidao/ERC4907Box.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/emojidao/Truffle-Box-For-ERC4907/issues"
+    "url": "https://github.com/emojidao/ERC4907Box/issues"
   },
-  "homepage": "https://github.com/emojidao/Truffle-Box-For-ERC4907#readme",
+  "homepage": "https://github.com/emojidao/ERC4907Box#readme",
   "dependencies": {
     "@openzeppelin/contracts": "^4.5.0",
     "dotenv": "^16.0.0",
