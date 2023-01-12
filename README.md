@@ -51,7 +51,7 @@ Helpful, but optional:
     npm install
     npm run start
     ```
-
+    ![Client](./client.png)
 5. After migrating your contracts, head to the `client` directory and run `npm run start` to view the application in your `http://localhost:3000/`.
 
 6. To mint your first NFT, you'll need to connect your wallet to a network. To do so, make sure your development console is still running. Then, connect to that network using your wallet. Afterwards, you'll need to use a funded account. You can import an account to your MetaMask wallet by using a private key outputted by the development console.
