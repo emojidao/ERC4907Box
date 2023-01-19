@@ -1,6 +1,6 @@
 # Truffle Box For ERC4907
 
-- [Truffle Box For ERC4907](#Truffle-Box-For-ERC4907)
+- [Truffle Box For ERC4907](#ERC4907Box)
   - [Requirements](#requirements)
   - [Setup](#setup)
   - [Installation](#installation)
@@ -26,11 +26,11 @@ Helpful, but optional:
 
 1. First ensure you are in a new and empty directory.
     ```shell
-    truffle unbox emojidao/Truffle-Box-For-ERC4907
+    truffle unbox emojidao/ERC4907Box
     ```
     If you want to create a directory, you can also run:
     ```shell
-    truffle unbox emojidao/Truffle-Box-For-ERC4907 <Directory Name>
+    truffle unbox emojidao/ERC4907Box <Directory Name>
     ```
     Running the `unbox` command should install the required dependencies.
 
